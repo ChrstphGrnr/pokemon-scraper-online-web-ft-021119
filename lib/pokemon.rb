@@ -3,10 +3,13 @@ class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
   @@all = []
 
-  def initialize(data, hp= 60)
-    # binding.pry
-    data.each do |k, v|
-      self.send("#{k}=", v)
+  def initialize(data)
+    if data.keys.include?(:hp)
+      data.each do |k, v|
+        self.send("#{k}=", v)
+      end
+    else 
+      @hp = 60
     end
     @@all << self
   end
