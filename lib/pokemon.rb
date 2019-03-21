@@ -27,7 +27,7 @@ class Pokemon
   def alter_hp(hp, db)
     # binding.pry
     self.hp = hp
-    self.save(self.name, self.type, db)
+    Pokemon.self.save(self.name, self.type, db)
 
   end
 
