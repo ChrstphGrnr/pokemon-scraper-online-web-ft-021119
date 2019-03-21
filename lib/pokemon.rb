@@ -7,6 +7,7 @@ class Pokemon
     data.each do |k, v|
       self.send "#{k}=", v
     end
+    @hp = 60
     @@all << self
   end
 
