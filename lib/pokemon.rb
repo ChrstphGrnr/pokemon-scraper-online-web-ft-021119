@@ -4,10 +4,10 @@ class Pokemon
   @@all = []
 
   def initialize(data)
+    @hp = 60
     data.each do |k, v|
       self.send "#{k}=", v
     end
-    @hp = 60
     @@all << self
   end
 
