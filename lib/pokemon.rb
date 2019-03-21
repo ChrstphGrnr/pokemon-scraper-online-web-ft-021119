@@ -27,6 +27,9 @@ class Pokemon
   def alter_hp(hp, db)
     binding.pry
     self.hp = hp
+    new = db.execute("SELECT * FROM pokemon WHERE id = ?",id).flatten
+    data = {id:new[0], name:new[1], type:new[2], db:db}
+    Pokemon.new(data)
     # class.self.save(self.name, self.type, db)
 
   end
