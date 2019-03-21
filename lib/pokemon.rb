@@ -3,11 +3,11 @@ class Pokemon
   attr_accessor :id, :name, :type, :hp, :db
   @@all = []
 
-  def initialize(data)
+  def initialize(data, hp= 60)
     data.each do |k, v|
       self.send "#{k}=", v
     end
-    @hp = 60
+    @hp = hp
     @@all << self
   end
 
