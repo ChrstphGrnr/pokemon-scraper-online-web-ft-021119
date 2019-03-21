@@ -4,9 +4,12 @@ class Pokemon
   @@all = []
 
   def initialize(data)
-    @hp = 60
-    data.each do |k, v|
-      self.send "#{k}=", v
+    if data.keys.include?(:hp)
+      data.each do |k, v|
+        self.send "#{k}=", v
+      end
+    else
+      @hp = 60
     end
     @@all << self
   end
