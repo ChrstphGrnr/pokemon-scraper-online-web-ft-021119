@@ -9,6 +9,9 @@ class Pokemon
         self.send("#{k}=", v)
       end
     else
+      data.each do |k, v|
+        self.send("#{k}=", v)
+      end
       @hp = 60
     end
     @@all << self
