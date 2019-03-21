@@ -4,13 +4,10 @@ class Pokemon
   @@all = []
 
   def initialize(data)
-    if data.keys.include?(:hp)
-      data.each do |k, v|
-        self.send "#{k}=", v
-      end
-    else
-      @hp = 60
+    data.each do |k, v|
+      self.send "#{k}=", v
     end
+    @hp = 60
     @@all << self
   end
 
@@ -28,7 +25,7 @@ class Pokemon
   end
 
   def alter_hp(hp, db)
-    binding.pry
+    # binding.pry
     db.execute("UPDATE pokemon SET hp = ? WHERE name = ?", hp, self.name)
 
     # class.self.save(self.name, self.type, db)
