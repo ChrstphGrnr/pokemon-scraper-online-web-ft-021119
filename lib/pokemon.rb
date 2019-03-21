@@ -24,6 +24,6 @@ class Pokemon
   end
 
   def self.alter_hp(hp, db)
-    db.execute(UPDATE )
+    db.execute("UPDATE )
 
 end
