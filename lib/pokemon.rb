@@ -4,7 +4,7 @@ class Pokemon
   @@all = []
 
   def initialize(data)
-    binding.pry
+    # binding.pry
     data.each do |k, v|
       self.send("#{k}=", v)
     end
