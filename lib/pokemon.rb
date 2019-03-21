@@ -1,6 +1,6 @@
 require 'pry'
 class Pokemon
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :hp:db
   @@all = []
 
   def initialize(data)
@@ -17,9 +17,9 @@ class Pokemon
   def self.find(id, db)
     # binding.pry
     new = db.execute("SELECT * FROM pokemon WHERE id = ?",id).flatten
-    binding.pry
+    # binding.pry
     data = {id:new[0], name:new[1], type:new[2], db:db}
-    binding.pry
+    # binding.pry
     self.new(data)
   end
 
